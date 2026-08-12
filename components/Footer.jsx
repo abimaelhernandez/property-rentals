@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '@/assets/logo-white'
 import logo from '@/assets/images/logo.png'
 
 import Image from 'next/image'
