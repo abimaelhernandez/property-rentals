@@ -3,8 +3,11 @@ import Hero from '@/components/Hero'
 import InfoBoxes from '../components/InfoBoxes'
 import HomeProperties from '../components/HomeProperties'
 
-const HomePage = () => {
-  console.log('gome page')
+import connectDB from './config/database'
+
+const HomePage = async () => {
+  console.log('Gome page',process.env.NEXT_PUBLIC)
+  await connectDB()
   return (
     <>
       <Hero/>
