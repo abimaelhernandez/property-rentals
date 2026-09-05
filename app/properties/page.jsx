@@ -3,10 +3,12 @@ import PropertyCard from '@/components/PropertyCard'
 async function getProperties() {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`, { cache: 'no-store' })
+    
     if (!res.ok) {
       console.error('Error fetching properties:', res.status, res.statusText)
       return []
     }
+
     const data = await res.json()
     return data || []
   } catch (error) {
