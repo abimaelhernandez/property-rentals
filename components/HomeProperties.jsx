@@ -2,22 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 // import properties from '@/properties.json'
 import PropertyCard from '@/components/PropertyCard.jsx'
-
-async function getProperties() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`, { cache: 'no-store' })
-    if (!res.ok) {
-      console.error('Error fetching properties:', res.status, res.statusText)
-      return []
-    }
-    const data = await res.json()
-    return data || []
-  } catch (error) {
-    console.error('getProperties error:', error)
-    return []
-  }
-}
-
+import { getProperties } from '@/utils/request.js'
 
 const HomeProperties = async () => {
 
@@ -27,7 +12,6 @@ const HomeProperties = async () => {
     .sort(() => Math.random() - Math.random())
     .slice(0, 3)
 
-  
   return (
     <>
       <section className="px-4 py-6">
