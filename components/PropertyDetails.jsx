@@ -10,7 +10,6 @@ import {
   FaCheck,
   FaMapMarker
 } from 'react-icons/fa'
-import { FaM } from 'react-icons/fa6'
 
 
 const PropertyDetails = ( { property }) => {
