@@ -1,0 +1,36 @@
+import GoogleProvider from 'next-auth/providers/google'
+
+export const authOptions = {
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
+    })
+  ], 
+  callbacks : {
+    async singIn ({profile}) {
+ /** 
+  * connect to DB 
+  * check for user 
+  * if no user add to DB 
+  * Return to allow sign in
+ */
+    },
+    async session ({ session }) {
+      
+ /** 
+  * get user from db
+  * assign user ID
+  * return session 
+ */
+
+    } 
+  }
+}

@@ -1,6 +1,5 @@
-import React from 'react'
 import NavBar from '@/components/NavBar'
-
+import AuthProvider from '@/components/AuthProvider'
 import '@/assets/styles/globals.css'
 import Footer from '@/components/Footer'
 
@@ -12,15 +11,17 @@ export const metadata = {
 
 const MainLayout = ({ children }) => {
   return (
-    <html lang='es'> 
-      <body>
-        <NavBar />
-        <main>
-          {children}
-        </main>
-        <Footer/>
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang='es'> 
+        <body>
+          <NavBar />
+          <main>
+            {children}
+          </main>
+          <Footer/>
+        </body>
+      </html>
+    </AuthProvider>
   )
 }
 
